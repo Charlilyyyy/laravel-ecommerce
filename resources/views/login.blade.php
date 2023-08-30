@@ -17,7 +17,7 @@
                     <p>Sign in to your account</p>
                 </div>
                 <div class="sign-in-form">
-                    <form>
+                    <form role="form" method="post" action="{{ route('loggedIn') }}" class="validation" data-cc-on-file="false" id="signup-form">
                     @csrf
                         <div class="input-request">
                             <div class="email-input input-text mb-2" style="width:100%">
@@ -29,36 +29,16 @@
                         </div>
                         <div class="signin-button">
                             <button type="submit">Sign In</button>
+                            <button style="background-color:red; font-size:13px" type="button">Forgot password ?</button>
                         </div>
                     </form>
                 </div>
+                <div class="other-opt mt-after">
+                    <a href="/register" class="create-account"><p>Don't have an account yet? Create acount here</p></a>
+                </div>
             </div>
-            <!-- <div class="container">
-                <form class="styled-form">
-                    @csrf
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input size="2" maxlength="4" type="text" id="username" name="username" placeholder="Enter your username">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password">
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div> -->
-            
         </div>
-        <!-- <div class="side-by-side">Div 3</div> -->
-    <!-- </div> -->
+        
 
     <style scoped>
        body {
@@ -67,6 +47,33 @@
     display: flex;
     
 }
+
+.mt-after{
+    margin-top: 80px
+}
+
+.other-opt{
+    width: 88%;
+    margin-left:22px
+}
+
+.create-account{
+    display: inline-block;
+    /* padding:  20px; */
+    /* margin-left:25px */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #708090;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    width:88%
+}
+.create-account p{
+    margin-left:30px
+}
+
+
 
 .left-div {
     flex: 65;
@@ -130,7 +137,7 @@
     width:88%;
 }
 
-.signin-button button{
+/* .signin-button button{
     width:100%;
     padding:15px;
     border: 1px solid #ccc;
@@ -139,7 +146,33 @@
     color:white;
     background-color: #00CC99;
     font-size:1rem;
+} */
+
+
+
+.signin-button button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #00CC99;
+    font-size: 1rem;
+    position: relative; /* Add position relative to the button's container */
 }
+
+.signin-button button::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #308070;
+    position: absolute;
+    bottom: -50px; /* Adjust the value to control the distance of the line from the button */
+    left: 0;
+}
+
 
 .logo img {
     width: 80px; /* Adjust logo size as needed */

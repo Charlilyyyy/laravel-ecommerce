@@ -10,7 +10,15 @@
         </div>
         <div class="nav-content">
             <div class="signin-btn">
-    <a href="/login">Sign In</a>
+                @auth
+                    @if(Auth::user()->username)
+                        <a href="{{ route('dashboard-member') }}">Hi {{ Auth::user()->username }}</a>
+                    @else
+                        <a href="{{ route('dashboard-member') }}">Hi user</a>
+                    @endif
+                @else
+                    <a href="/login">Sign In</a>
+                @endauth
             </div>
             <a href="#" id="sidebar-toggle">Toggle Sidebar</a>
         </div>
