@@ -11,4 +11,7 @@
             @csrf
         </form>
     @endauth
+
+    <a href="{{ route('dashboard-vendor') }}">Seller center</a>
+    <a href="{{ route('member-profile') }}">Profile</a>
 </div>
