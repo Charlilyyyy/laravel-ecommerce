@@ -11,8 +11,6 @@ class MemberProfileController extends Controller
 {
     public function index(){
         $user = \Auth::user();
-        return view('dashboard-member\member-profle\profile',compact('user'));
-
-        
+        return view('dashboard-member.member-profile.profile',compact('user'));
     }
 }
