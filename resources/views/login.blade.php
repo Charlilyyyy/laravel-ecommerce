@@ -4,13 +4,13 @@
     <!-- <div class="container"> -->
         <div class="left-div">
             <div class="l">
-                <p>hnjm</p>
+                <!-- <p>hnjm</p> -->
             </div>
         </div>
         <div class="right-div">
             <div class="container">
                 <div class="logo">
-                    <a href="/"><img src="logo.png" alt="Logo"></a>
+                    <a href="/"><img style="margin-left:0px" src="{{ asset('images/tc.jpeg') }}" alt="Logo"></a>
                 </div>
                 <div class="header-w-desc">
                     <h5>Charlie laravel ecommerce solution providing digital solution for your products.</h5>

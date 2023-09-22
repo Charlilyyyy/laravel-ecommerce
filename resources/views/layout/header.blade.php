@@ -29,7 +29,7 @@
 
     @include('layout.sidebar')
 
-    <!-- <div class="sidebar" id="sidebar">
+    <!-- <div class="sidebar" id="sidebar">~
 <a href="#">k</a>
 </div> -->
 

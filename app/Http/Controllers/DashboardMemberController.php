@@ -9,4 +9,6 @@ class DashboardMemberController extends Controller
     public function index(){
         return view('dashboard-member.dashboard');
     }
+
+    
 }
