@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('settings')->group(function () {
         Route::get('/', [SettingsController::class, 'settings'])->name('settings');
         Route::get('/forgot-password', [SettingsController::class, 'forgotPassword'])->name('forgot-password');
+        Route::post('/changed-password', [SettingsController::class, 'changedPassword'])->name('changed-password');
     });
 });
 
