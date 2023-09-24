@@ -32,7 +32,11 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('settings')->group(function () {
         Route::get('/', [SettingsController::class, 'settings'])->name('settings');
         Route::get('/forgot-password', [SettingsController::class, 'forgotPassword'])->name('forgot-password');
-        Route::post('/changed-password', [SettingsController::class, 'changedPassword'])->name('changed-password');
+        Route::middleware(['web', 'throttle:3,30', 'password_change_rate_limit'])->group(function () {
+            Route::post('/changed-password', [SettingsController::class, 'changedPassword'])->name('changed-password');
+        });        
     });
 });
+
+
 

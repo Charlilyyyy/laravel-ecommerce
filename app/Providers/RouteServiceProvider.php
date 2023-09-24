@@ -37,4 +37,25 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
     }
+
+    protected function mapApiRoutes()
+    {
+        Route::middleware('api')
+            ->prefix('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+    }
+
+    protected function mapWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
+
+        // Add rate limiting for all requests to the changedPassword route
+        Route::middleware('web', 'throttle:3,3600')->group(function () {
+            require base_path('routes/web.php');
+        });
+    }
+
 }
