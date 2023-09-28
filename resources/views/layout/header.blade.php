@@ -11,10 +11,10 @@
         <div class="nav-content">
             <div class="signin-btn">
                 @auth
-                    @if(Auth::user()->username)
-                        <a href="{{ route('dashboard-member') }}">Hi {{ Auth::user()->username }}</a>
+                    @if(Auth::user()->first_name)
+                        <a href="{{ route('dashboard-member') }}">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                     @else
-                        <a href="{{ route('dashboard-member') }}">Hi user</a>
+                        <a href="{{ route('dashboard-member') }}">User</a>
                     @endif
                 @else
                     <a href="/login">Sign In</a>
